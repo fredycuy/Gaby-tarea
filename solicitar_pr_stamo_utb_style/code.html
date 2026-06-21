@@ -1,0 +1,353 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>EduCrédito EC - Solicitud de Préstamo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .tonal-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0px 4px 20px rgba(0, 104, 55, 0.05);
+        }
+        .step-active {
+            color: #006837;
+            font-weight: 700;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+<!-- Tailwind Config from Authority -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#1a1c1e",
+                    "on-primary-container": "#99ffba",
+                    "primary": "#006837",
+                    "on-surface-variant": "#43474f",
+                    "secondary": "#F9ED32",
+                    "primary-container": "#004d28",
+                    "surface-container": "#f0f4ef",
+                    "on-surface": "#00210e",
+                    "on-primary-fixed": "#00210e",
+                    "surface-tint": "#006837",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f8f9ff",
+                    "inverse-surface": "#213145",
+                    "on-secondary-fixed": "#211b00",
+                    "secondary-fixed-dim": "#dbc700",
+                    "outline-variant": "#c3c6d1",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#131e17",
+                    "on-secondary-fixed-variant": "#4d4100",
+                    "primary-fixed-dim": "#6edb91",
+                    "on-secondary-container": "#211b00",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d0dbed",
+                    "surface-container-highest": "#e1e9df",
+                    "tertiary-fixed": "#d9e6da",
+                    "surface": "#f8f9ff",
+                    "inverse-primary": "#6edb91",
+                    "tertiary-fixed-dim": "#bdcabe",
+                    "surface-container-high": "#e7efe6",
+                    "inverse-on-surface": "#eaf1ff",
+                    "outline": "#737780",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-background": "#00210e",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#929f94",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-fixed-variant": "#3e4a41",
+                    "primary-fixed": "#89f8ac",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary": "#16211a",
+                    "on-primary-fixed-variant": "#00522a",
+                    "secondary-container": "#F9ED32",
+                    "secondary-fixed": "#f9f06b",
+                    "tertiary-container": "#2b362e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "4px",
+                    "lg": "8px",
+                    "xl": "12px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "4px",
+                    "lg": "40px",
+                    "max-width": "1200px",
+                    "xl": "64px",
+                    "xs": "8px",
+                    "margin-mobile": "16px",
+                    "sm": "16px",
+                    "md": "24px",
+                    "margin-desktop": "auto"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "caption": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "title-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-[0px_4px_20px_rgba(0,104,55,0.05)] flex items-center justify-between px-margin-mobile h-16 md:px-lg">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-[32px]">account_balance</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">EduCrédito EC</h1>
+</div>
+<nav class="hidden md:flex items-center gap-md">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors" href="../index.html">Inicio</a>
+<a class="text-primary font-bold font-label-md text-label-md border-b-2 border-primary" href="../inicio_simulador_utb_style/code.html">Simulador</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors" href="../mi_panel_utb_style/code.html">Perfil</a>
+</nav>
+<button class="md:hidden material-symbols-outlined text-primary">menu</button>
+</header>
+<main class="pt-24 pb-32 px-margin-mobile md:px-lg max-w-[1200px] mx-auto">
+<!-- Progress Stepper (Mobile) -->
+<div class="md:hidden mb-md">
+<div class="flex justify-between items-center mb-xs">
+<span class="text-caption font-caption text-primary font-bold">Paso 3 de 3</span>
+<span class="text-caption font-caption text-on-surface-variant">Resumen Final</span>
+</div>
+<div class="w-full bg-outline-variant h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-1 rounded-full w-full"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md items-start">
+<!-- Left Column: Inputs -->
+<div class="lg:col-span-7 flex flex-col gap-md">
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-primary">edit_document</span>
+<h2 class="font-title-md text-title-md text-primary">Detalles de la Solicitud</h2>
+</div>
+<!-- Configuración Final Section -->
+<section class="tonal-card rounded-lg p-md flex flex-col gap-sm">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-wider font-bold">Selección de Préstamo</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="text-caption font-caption text-on-surface-variant">Monto Solicitado (USD)</label>
+<div class="flex items-center bg-surface-container-low border border-outline-variant rounded-lg p-3 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="text-primary font-bold mr-2">$</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md font-body-md font-bold text-primary" max="60" placeholder="0.00" type="number" value="60">
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-caption font-caption text-on-surface-variant">Plazo (Meses)</label>
+<select class="bg-surface-container-low border border-outline-variant rounded-lg p-3 text-body-md font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>12 meses</option>
+<option selected="">24 meses</option>
+<option>36 meses</option>
+<option>48 meses</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-xs mt-xs">
+<label class="text-caption font-caption text-on-surface-variant">Motivo del préstamo (Opcional)</label>
+<textarea class="bg-surface-container-low border border-outline-variant rounded-lg p-3 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Ej: Pago de matrícula ciclo 2024-B" rows="2"></textarea>
+</div>
+</section>
+<!-- Garante Section -->
+<section class="tonal-card rounded-lg p-md border-l-4 border-primary">
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary">person_add</span>
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-wider font-bold">Información del Garante (Obligatorio)</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="text-caption font-caption text-on-surface-variant">Nombre Completo</label>
+<input class="bg-surface-container-low border border-outline-variant rounded-lg p-3 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none" placeholder="Ej: Juan Pérez" type="text" required="true">
+</div>
+<div class="flex flex-col gap-xs">
+<label class="text-caption font-caption text-on-surface-variant">Número de Cédula</label>
+<input class="bg-surface-container-low border border-outline-variant rounded-lg p-3 text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none" maxlength="10" placeholder="000000000-0" type="text" required="true">
+</div>
+</div>
+<div class="mt-sm p-3 bg-secondary/10 rounded-lg flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+<p class="text-caption font-caption text-on-surface-variant">
+                            El garante recibirá un correo electrónico de <span class="font-bold text-primary">UTB</span> para la firma digital del contrato una vez aprobada la solicitud.
+                        </p>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary & Amortization -->
+<div class="lg:col-span-5 flex flex-col gap-md">
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+<h2 class="font-title-md text-title-md text-primary">Resumen del Crédito</h2>
+</div>
+<div class="tonal-card rounded-lg overflow-hidden border-t-4 border-primary">
+<div class="bg-primary p-md text-on-primary">
+<p class="text-caption font-caption opacity-90 uppercase tracking-widest font-bold">Cuota Mensual Estimada</p>
+<h3 class="font-display-lg text-[36px] font-bold text-secondary">$124.50</h3>
+<div class="flex justify-between items-center mt-xs border-t border-on-primary/10 pt-xs">
+<span class="text-caption font-caption bg-secondary text-primary px-2 py-0.5 rounded font-bold">Tasa: 9.5% TEA</span>
+<span class="text-caption font-caption font-medium">Total: $2,988.00</span>
+</div>
+</div>
+<!-- Amortization Table -->
+<div class="p-md">
+<h4 class="font-label-md text-label-md text-primary font-bold mb-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+                        Tabla de Amortización
+                    </h4>
+<div class="overflow-hidden border border-outline-variant rounded-lg">
+<div class="bg-surface-container-low px-3 py-2 grid grid-cols-4 font-caption text-[11px] font-bold text-primary uppercase">
+<span class="">Mes</span>
+<span class="">Capital</span>
+<span class="">Interés</span>
+<span class="text-right">Total</span>
+</div>
+<div class="max-h-40 overflow-y-auto custom-scrollbar">
+<div class="px-3 py-2 grid grid-cols-4 font-body-md text-[13px] border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<span class="font-bold">1</span>
+<span class="">$104.75</span>
+<span class="">$19.75</span>
+<span class="text-right font-bold text-primary">$124.50</span>
+</div>
+<div class="px-3 py-2 grid grid-cols-4 font-body-md text-[13px] border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<span class="font-bold">2</span>
+<span class="">$105.58</span>
+<span class="">$18.92</span>
+<span class="text-right font-bold text-primary">$124.50</span>
+</div>
+<div class="px-3 py-2 grid grid-cols-4 font-body-md text-[13px] border-b border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+<span class="font-bold">3</span>
+<span class="">$106.41</span>
+<span class="">$18.09</span>
+<span class="text-right font-bold text-primary">$124.50</span>
+</div>
+<div class="px-3 py-2 grid grid-cols-4 font-body-md text-[13px] border-b border-outline-variant/30 italic text-on-surface-variant">
+<span class="">...</span>
+<span class="">...</span>
+<span class="">...</span>
+<span class="text-right">...</span>
+</div>
+<div class="px-3 py-2 grid grid-cols-4 font-body-md text-[13px] bg-surface-container-lowest font-medium">
+<span class="font-bold">24</span>
+<span class="">$123.50</span>
+<span class="">$1.00</span>
+<span class="text-right font-bold text-primary">$124.50</span>
+</div>
+</div>
+</div>
+<!-- Legal & Action -->
+<div class="mt-md flex flex-col gap-md">
+<label class="flex items-start gap-sm cursor-pointer group">
+<div class="relative flex items-center mt-1">
+<input class="peer h-5 w-5 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" type="checkbox" required="true">
+</div>
+<span class="font-caption text-caption text-on-surface-variant group-hover:text-primary transition-colors">
+                                    Acepto los <a class="text-primary font-bold underline decoration-secondary" href="https://www.utb.edu.ec/" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a> legales y autorizo a EduCrédito EC para la verificación de mi historial crediticio y de mi garante.
+                                </span>
+</label>
+<div class="bg-primary/5 border border-primary/20 rounded-lg p-3 mb-sm flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">warning</span>
+<p class="text-caption font-caption text-on-surface-variant">
+<span class="font-bold text-primary">Límite de crédito activo: $60.</span> Solo se permite un préstamo a la vez. Cancela tu deuda actual para renovar.
+                        </p>
+</div>
+<a href="../mi_panel_utb_style/code.html" class="w-full bg-primary text-on-primary h-12 rounded-lg font-bold font-body-md flex items-center justify-center gap-xs hover:bg-primary-container transition-all active:scale-[0.98] shadow-lg shadow-primary/20" id="confirmBtn">
+<span class="">Confirmar Solicitud</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<p class="text-center font-caption text-caption text-on-surface-variant italic">
+                                Al confirmar, se generará una solicitud formal sujeta a aprobación de la <span class="font-bold">UTB</span>.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-[0px_-4px_20px_rgba(0,104,55,0.05)] flex justify-around items-center h-20 px-2 pb-safe"><button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Inicio</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary text-primary rounded-lg px-6 py-2 transition-all active:scale-90 duration-200 shadow-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-md text-label-md font-bold">Préstamos</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Perfil</span>
+</button></nav>
+<!-- Success Modal -->
+<div class="fixed inset-0 z-[100] bg-on-surface/40 backdrop-blur-sm hidden items-center justify-center p-md" id="successOverlay">
+<div class="tonal-card max-w-sm w-full rounded-xl p-xl text-center flex flex-col items-center animate-in fade-in zoom-in duration-300">
+<div class="w-20 h-20 bg-secondary text-primary rounded-full flex items-center justify-center mb-md shadow-lg">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold mb-xs">¡Solicitud Enviada!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Tu solicitud ha sido registrada exitosamente con el código <span class="font-bold text-primary">#EDU-2023-984</span>. Te notificaremos en un plazo máximo de 48 horas.</p>
+<a href="../mi_panel_utb_style/code.html" class="w-full bg-primary text-on-primary h-12 rounded-lg font-bold hover:bg-primary-container transition-all inline-flex items-center justify-center">Ir a mis trámites</a>
+</div>
+</div>
+<script>
+        document.getElementById('confirmBtn').addEventListener('click', function() {
+            const checkbox = document.querySelector('input[type="checkbox"]');
+            if (checkbox.checked) {
+                document.getElementById('successOverlay').classList.remove('hidden');
+                document.getElementById('successOverlay').classList.add('flex');
+            } else {
+                alert('Debe aceptar los términos y condiciones para continuar.');
+                checkbox.parentElement.classList.add('animate-pulse');
+                setTimeout(() => {
+                    checkbox.parentElement.classList.remove('animate-pulse');
+                }, 1000);
+            }
+        });
+    </script>
+
+
+
+
+</body></html>
