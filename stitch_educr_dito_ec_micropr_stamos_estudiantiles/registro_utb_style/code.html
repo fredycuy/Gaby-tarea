@@ -1,0 +1,312 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Registro - EduCrédito EC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#000000",
+                    "on-primary-container": "#ffffff",
+                    "primary": "#006837",
+                    "on-surface-variant": "#43474f",
+                    "secondary": "#F9ED32",
+                    "primary-container": "#004d28",
+                    "surface-container": "#e5eeff",
+                    "on-surface": "#0b1c30",
+                    "on-primary-fixed": "#00210e",
+                    "surface-tint": "#006837",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f8f9ff",
+                    "inverse-surface": "#213145",
+                    "on-secondary-fixed": "#242000",
+                    "secondary-fixed-dim": "#dbc900",
+                    "outline-variant": "#c3c6d1",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#131e17",
+                    "on-secondary-fixed-variant": "#4d4500",
+                    "primary-fixed-dim": "#70db92",
+                    "on-secondary-container": "#242000",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-container-highest": "#d3e4fe",
+                    "tertiary-fixed": "#d9e6da",
+                    "surface": "#f8f9ff",
+                    "inverse-primary": "#70db92",
+                    "tertiary-fixed-dim": "#bdcabe",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "outline": "#737780",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-background": "#0b1c30",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#929f94",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-fixed-variant": "#3e4a41",
+                    "primary-fixed": "#90f6ad",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary": "#16211a",
+                    "on-primary-fixed-variant": "#00522a",
+                    "secondary-container": "#F9ED32",
+                    "secondary-fixed": "#f9f066",
+                    "tertiary-container": "#2b362e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "4px",
+                    "lg": "40px",
+                    "max-width": "1200px",
+                    "xl": "64px",
+                    "xs": "8px",
+                    "margin-mobile": "16px",
+                    "sm": "16px",
+                    "md": "24px",
+                    "margin-desktop": "auto"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "caption": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "title-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .form-input-focus:focus {
+            outline: none;
+            border-color: #006837;
+            box-shadow: 0 0 0 2px rgba(0, 104, 55, 0.1);
+        }
+        .bento-card {
+            background: #ffffff;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0px 4px 20px rgba(0, 104, 55, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .bento-card:hover {
+            box-shadow: 0px 8px 30px rgba(0, 104, 55, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Top Navigation Bar (Mobile & Desktop) -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-[0px_4px_20px_rgba(0,104,55,0.05)] h-16 flex items-center justify-between px-margin-mobile md:px-gutter">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="account_balance">account_balance</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">EduCrédito EC</h1>
+</div>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors flex items-center gap-1" href="/">
+<span class="">Iniciar Sesión</span>
+<span class="material-symbols-outlined" data-icon="login">login</span>
+</a>
+</header>
+<main class="pt-24 pb-12 px-margin-mobile md:px-gutter max-w-[1200px] mx-auto pb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Side Illustration & Information (Desktop Only) -->
+<div class="hidden lg:flex lg:col-span-5 flex-col justify-center gap-lg sticky top-24 h-fit">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary mb-4 leading-tight">Tu futuro académico, nuestra prioridad.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Únete a la plataforma líder en financiamiento estudiantil en Ecuador. Un proceso 100% digital, seguro y pensado para estudiantes de la UTB.</p>
+</div>
+<div class="relative w-full aspect-square rounded-xl overflow-hidden shadow-xl">
+<img class="w-full h-full object-cover" data-alt="A professional and modern digital illustration of a group of Ecuadorian university students collaborating in a bright, futuristic library. The scene features clean lines, a sophisticated palette of deep emerald green and corporate whites, with soft golden accents. High-key natural lighting illuminates the space, creating a serene and trustworthy institutional atmosphere. The style is minimalist corporate modernism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2g8ra8D8GuoBW-CY0s9VlFo3I1iYRZaIr3KDF2yzHuiMbPcQ2uLZa9V35DaJWIZHJdnaV5Yj-xL8V8lApAaauaoupEjSVs9nm0J_PmwFsNkola61Bd9jZV9O5YY5nOmNiBGKBvoa9xgyLYjwOJkQFJrwoYy9oAQEnk8OQOba0DlGtCEMDVwUpXhOZAXpyJkHTtIdmtoL-mrLjt7Qxlv-Pht1yadqfojT_ycD0gHitPB7HsStVHfAOb1yGV24i-mBRgKBybYfKq2Y">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-md text-label-md">Crédito Protegido</span>
+</div>
+<p class="font-caption text-caption opacity-90">Cumplimos con la Ley Orgánica de Protección de Datos Personales de Ecuador.</p>
+</div>
+</div>
+</div>
+<!-- Registration Form Area -->
+<div class="lg:col-span-7">
+<div class="bento-card rounded-xl p-md md:p-lg border-t-4 border-t-primary">
+<div class="mb-md">
+<h3 class="font-headline-lg text-headline-lg text-primary">Registro de Estudiante</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Completa tus datos para crear tu perfil institucional en la UTB.</p>
+</div>
+<form class="space-y-6" id="registrationForm">
+<!-- Name Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="names">Nombres</label>
+<input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="names" placeholder="Ej. Juan Andrés" required="" type="text">
+</div>
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="surnames">Apellidos</label>
+<input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="surnames" placeholder="Ej. Pérez Moreira" required="" type="text">
+</div>
+</div>
+<!-- ID & Institution -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="cedula">Cédula de Identidad</label>
+<input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="cedula" maxlength="10" pattern="\d{10}" placeholder="10 dígitos" required="" type="text">
+</div>
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="university">Universidad</label>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 rounded-lg border border-outline-variant bg-surface-container-low font-body-md text-body-md appearance-none cursor-not-allowed" disabled="" id="university">
+<option selected="" value="UTB">Universidad Técnica de Babahoyo (UTB)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline" data-icon="lock">lock</span>
+</div>
+</div>
+</div>
+<!-- Career & Contact -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md"><div class="flex flex-col gap-base"><label class="font-label-md text-label-md text-on-surface" for="career">Carrera</label><input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="career" placeholder="Ej. Ingeniería en Sistemas" required="" type="text"></div><div class="flex flex-col gap-base"><label class="font-label-md text-label-md text-on-surface" for="semester">Semestre</label><input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="semester" placeholder="Ej. Quinto Semestre" required="" type="text"></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-md"><div class="flex flex-col gap-base"><label class="font-label-md text-label-md text-on-surface" for="course">Curso</label><input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="course" placeholder="Ej. A" required="" type="text"></div><div class="flex flex-col gap-base"><label class="font-label-md text-label-md text-on-surface" for="phone">Teléfono Celular</label><input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="phone" placeholder="Ej. 0987654321" required="" type="tel"></div></div>
+<!-- Email -->
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="email">Correo Institucional (@utb.edu.ec)</label>
+<input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="email" pattern=".+@utb\.edu\.ec" placeholder="usuario@utb.edu.ec" required="" type="email">
+</div>
+<!-- Password -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="password">Contraseña</label>
+<input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="password" minlength="8" placeholder="Mínimo 8 caracteres" required="" type="password">
+</div>
+<div class="flex flex-col gap-base">
+<label class="font-label-md text-label-md text-on-surface" for="confirm_password">Confirmar Contraseña</label>
+<input class="form-input-focus h-12 px-4 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md" id="confirm_password" placeholder="Repite tu contraseña" required="" type="password">
+</div>
+</div>
+<!-- Data Protection Notice -->
+<div class="bg-surface-container-lowest p-4 rounded-lg border-l-4 border-l-primary bg-primary/5 flex gap-4">
+<span class="material-symbols-outlined text-primary shrink-0" data-icon="security">security</span>
+<div>
+<h4 class="font-label-md text-label-md text-primary font-bold">Aviso de Privacidad (LOPDP)</h4>
+<p class="font-caption text-caption text-on-surface-variant leading-relaxed">
+                                    En cumplimiento con la Ley Orgánica de Protección de Datos Personales de Ecuador, EduCrédito EC garantiza que sus datos serán tratados con absoluta confidencialidad para fines exclusivos de gestión de crédito académico.
+                                </p>
+</div>
+</div>
+<!-- Terms & Conditions -->
+<div class="flex items-start gap-3">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary" id="terms" required="" type="checkbox">
+<label class="font-caption text-caption text-on-surface-variant" for="terms">
+                                Acepto los <a class="text-primary underline font-bold" href="https://www.utb.edu.ec/" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a> y autorizo el tratamiento de mis datos personales según la normativa vigente.
+                            </label>
+</div>
+<!-- CTA Button -->
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-bold font-title-md text-title-md shadow-lg active:scale-[0.98] hover:bg-primary-container transition-all flex items-center justify-center gap-2 group" type="submit">
+<span class="">Crear Cuenta</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="text-center pt-2">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                ¿Ya tienes una cuenta? 
+                                <a class="text-primary font-bold hover:underline" href="../mi_panel_educr_dito/code.html">Inicia Sesión aquí</a>
+</p>
+</div>
+</form>
+</div>
+<!-- Bottom Footer (Mobile) -->
+<div class="mt-8 text-center lg:hidden">
+<p class="font-caption text-caption text-outline">EduCrédito EC v1.0 • UTB ID Verificado</p>
+<div class="flex justify-center gap-2 mt-2">
+<div class="w-8 h-1 bg-primary rounded-full"></div>
+<div class="w-8 h-1 bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Scripts -->
+<script>
+        const form = document.getElementById('registrationForm');
+        const cedulaInput = document.getElementById('cedula');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm_password');
+
+        // Simple validation logic for feedback
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (password.value !== confirmPassword.value) {
+                alert('Las contraseñas no coinciden.');
+                confirmPassword.classList.add('border-error');
+                return;
+            }
+
+            if (cedulaInput.value.length !== 10) {
+                alert('La cédula debe tener exactamente 10 dígitos.');
+                return;
+            }
+
+            // Success state simulation
+            const btn = form.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span> Procesando...';
+            btn.classList.replace('bg-primary', 'bg-secondary');
+            btn.classList.replace('text-on-primary', 'text-on-secondary');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span>Cuenta Creada</span><span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>';
+                window.location.href = '../mi_panel_educr_dito/code.html';
+            }, 1500);
+        });
+
+        // Instant validation on confirm password
+        confirmPassword.addEventListener('input', () => {
+            if (confirmPassword.value === password.value) {
+                confirmPassword.classList.remove('border-error');
+                confirmPassword.classList.add('border-primary');
+            } else {
+                confirmPassword.classList.remove('border-primary');
+                confirmPassword.classList.add('border-error');
+            }
+        });
+
+        // Cedula only numbers
+        cedulaInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+    </script>
+
+
+
+
+</body></html>
